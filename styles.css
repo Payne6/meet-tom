@@ -1,0 +1,334 @@
+:root {
+    --color-orange: #f13c20;
+    --color-blue: #4056a1;
+    --color-yellow: #d79922;
+    --hero-font: 'Epilogue', sans-serif;
+    --body-font: 'Noto Sans KR', sans-serif;
+}
+
+.hide {
+    display: none;
+}
+
+body {
+    margin: 0px;
+}
+
+.top-nav {
+    position: absolute;
+    background-color: transparent;
+    z-index: 99;
+    width: 100%;
+}
+
+.top-nav nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 1em;
+}
+
+.top-nav nav .nav-name p {
+    font-family: var(--body-font);
+    color: var(--color-blue);
+    font-weight: bold;
+    font-size: 2em;
+    margin: 0px;
+}
+
+.top-nav nav .nav-items {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.top-nav nav .nav-items a {
+    font-family: var(--body-font);
+    color: var(--color-blue);
+    margin-right: 3em;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 450px) {
+    .top-nav nav .nav-items {
+        display: none;
+    }
+}
+
+
+.hero-header {
+    background: url(./img/desk.jpg);
+    background-size: cover;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1em;
+}
+
+.hero-text {
+    width: 800px;
+    height: 18em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.hero-header .hero-text h1 {
+    font-family: var(--hero-font);
+    font-size: 4em;
+    color: var(--color-orange);
+}
+
+@media only screen and (max-width: 450px) {
+    .hero-header {
+        background-position-x: 30em;
+    }
+
+    .hero-text {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .hero-header .hero-text h1 {
+        font-size: 2.5em;
+    }
+}
+
+
+.about-me {
+    padding: 2em 1em;
+    margin-bottom: 2em;
+}
+
+.about-me .about-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.about-me .about-left h2 {
+    font-family: var(--body-font);
+    color: var(--color-blue);
+    font-size: 2.5em;
+    font-weight: 400;
+    width: 60%;
+    margin-bottom: 2em;
+}
+
+.about-me .about-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.about-me .about-right p {
+    font-family: var(--body-font);
+    font-size: 2em;
+    font-weight: 400;
+    width: 60%;
+    text-align: right;
+}
+
+.about-me .about-right p span {
+    color: var(--color-orange);
+}
+
+@media only screen and (max-width: 450px) {
+    .about-me .about-left h2 {
+        width: 100%;
+        margin-bottom: 0px;
+    }
+
+    .about-me .about-right p {
+        width: 100%;
+        text-align: left;
+    }
+}
+
+
+.my-skills {
+    padding: 2em 4em;
+}
+
+.my-skills .skill-div.skill-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    /*margin-top: -50px;*/
+}
+
+.my-skills .skill-div.skill-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    /*margin-top: -50px;*/
+}
+
+.my-skills .skill-div .skill {
+    background-color: var(--color-blue);
+    padding: 2em;
+    width: 400px;
+    border-bottom: 1px solid white;
+    border-radius: 20px;
+}
+
+.inner-skill-left {
+    /*transform: translateX(-200%);*/
+    opacity: 0%;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.inner-skill-right {
+    opacity: 0%;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.inner-skill-left.show, 
+.inner-skill-right.show {
+    /*transform: translateX(0);*/
+    opacity: 100%;
+}
+
+.my-skills .skill-div .skill .skill-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.my-skills .skill-div .skill .skill-top h4 {
+    color: white;
+    font-family: var(--body-font);
+    font-size: 1.5em;
+    margin-bottom: 0px;
+}
+
+.my-skills .skill-div .skill .skill-top img {
+    filter: invert(100%);
+    width: 60px;
+    margin-right: 1em;
+}
+
+.my-skills .skill-div .skill p {
+    color: white;
+    font-family: var(--body-font);
+}
+
+
+@media only screen and (max-width: 450px) {
+    .my-skills {
+        padding: 2em 1em;
+    }
+
+    .my-skills .skill-div.skill-right,
+    .my-skills .skill-div.skill-left {
+        justify-content: center;
+    }
+
+    .my-skills .skill-div .skill {
+        width: 80%;
+        margin-bottom: 1em;
+    }
+}
+
+
+.interests {
+    padding: 2em 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.interests h2 {
+    color:var(--color-orange);
+    font-family: var(--body-font);
+    font-size: 2.5em;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.interests p {
+    font-family: var(--body-font);
+    font-size: 2em;
+    width: 60%;
+    text-align: left;
+}
+
+.interests p .interest-title {
+    font-weight: bold;
+}
+
+#reading-title {
+    color: var(--color-blue);
+}
+
+#cooking-title {
+    color: var(--color-yellow);
+}
+
+#travelling-title {
+    color: var(--color-orange);
+}
+
+@media only screen and (max-width: 450px) {
+    .interests p {
+        width: 100%;
+    }
+}
+
+
+.contact {
+    padding: 2em 1em;
+}
+
+.contact h2 {
+    font-family: var(--body-font);
+    color: var(--color-blue);
+    font-size: 2.5em;
+    font-weight: 400;
+    text-align: right;
+}
+
+.contact h2 a {
+    text-decoration: none;
+    color: var(--color-orange);
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 450px) {
+    .contact h2 {
+        width: 100%;
+        text-align: left;
+    }
+}
+
+
+footer {
+    background-color: var(--color-blue);
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer .footer-left {
+    margin-bottom: 1em;
+}
+
+footer .footer-left p {
+    color: white;
+    font-family: var(--body-font);
+}
+
+footer .footer-right {
+    text-align: center;
+    width: 70%;
+}
+
+footer .footer-right a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.75em;
+}
