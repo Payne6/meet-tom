@@ -9,6 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css" />
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
 </head>
 <body>
     <section class="top-nav">
@@ -26,16 +29,17 @@
     </section>
 
     <section class="hero-header">
-        <div class="hero-text">
+        <div>
+            <h1 data-splitting class="new-hero-text">CREATING ONLINE CONTENT THAT CUTS THROUGH THE NOISE</h1>
         </div>
     </section>
 
     <section class="about-me" id="about">
         <div class="about-left">
-            <h2>I'm a digital marketing executive at an award-winning digital marketing agency in Birmingham.</h2>
+            <h2 data-splitting>I'm a digital marketing executive at an award-winning digital marketing agency in Birmingham.</h2>
         </div>
         <div class="about-right">
-            <p>Since joining the company as an apprentice in 2022, I've worked across all areas of the business, building websites, writing reports and white papers, writing blogs and producing attention-grabbing content for social media.</p>
+            <p data-splitting class="h2-split">Since joining the company as an apprentice in 2022, I've worked across all areas of the business, building websites, writing reports and white papers, writing blogs and producing attention-grabbing content for social media.</p>
         </div>
         <div class="about-img"><img src=""></div>
     </section>
@@ -47,7 +51,7 @@
 
             <div class="skill">
                 <div class="skill-top">
-                    <h4>Blogs</h4>
+                    <h4 data-splitting class="h2-split">Writing blogs</h4>
                     <img src="img/blog.png">
                 </div>
                 <p>I've written blogs on a variety of topics, from Dutch contract law to the impact of Big Data on the energy industry. Whether you need content that's jazzy or informative (or both), I'll find the words to match.</p>
@@ -56,7 +60,7 @@
         
             <div class="skill">
                 <div class="skill-top">
-                    <h4>Data analysis</h4>
+                    <h4 data-splitting class="h2-split">Data analysis</h4>
                     <img src="img/data.png">
                 </div>
                 <p>I compile monthly reports on my clients' social media performance using native analytics platforms and analyse large data sets to write white papers on how businesses are coping with economic challenges.</p>
@@ -64,7 +68,7 @@
         
             <div class="skill">
                 <div class="skill-top">
-                    <h4>Social media</h4>
+                    <h4 data-splitting class="h2-split">Social media</h4>
                     <img src="img/social.png">
                 </div>
                 <p>I handle my clients' social media outreach and community management, acting as their customers' first point of contact on social media platforms, carrying out customer service and escalating complaints.</p>
@@ -72,7 +76,7 @@
 
             <div class="skill">
                 <div class="skill-top">
-                    <h4>Frontend code</h4>
+                    <h4 data-splitting class="h2-split">Frontend code</h4>
                     <img src="img/frontend.png">
                 </div>
                 <p>I build webpages using HTML, CSS and JavaScript. I also man my company's support desk and help to fix broken pages on clients' websites. In fact, I built the page you're looking at right now. What do you think?</p>
@@ -87,7 +91,7 @@
             <div class="interest">
                 <img src="img/reading.jpg">
                 <div class="interest-content">
-                    <h4>Reading</h4>
+                    <h4 data-splitting class="h2-split">Reading</h4>
                     <p>I'll read anything, from Harry Potter to Ulysses. If you like talking about books and the power of words, I'm your man.</p>
                 </div>
             </div>
@@ -95,7 +99,7 @@
             <div class="interest">
                 <img src="img/food.jpg">
                 <div class="interest-content">
-                    <h4>Cooking</h4>
+                    <h4 data-splitting class="h2-split">Cooking</h4>
                     <p>In the evenings you'll usually find me whipping up something delicious in the kitchen.</p>
                 </div>
             </div>
@@ -103,7 +107,7 @@
             <div class="interest">
                 <img src="img/travel.jpg">
                 <div class="interest-content">
-                    <h4>Travelling</h4>
+                    <h4 data-splitting class="h2-split">Travelling</h4>
                     <p>I'll take any opportunity to hop on a boat or a plane and explore a new corner of the world.</p>
                 </div>
             </div>
@@ -127,7 +131,7 @@
             <a href="https://unsplash.com/@tomasmartinez?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Photo by Tomas Martinez on Unsplash</a>
         </div>
     </footer> 
-
+    <script>Splitting();</script>
     <script src="js.js"></script>
 </body>
 </html>

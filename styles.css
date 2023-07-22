@@ -6,6 +6,11 @@
     --body-font: 'Noto Sans KR', sans-serif;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
 .hide {
     display: none;
 }
@@ -28,7 +33,16 @@ body {
     padding: 0 1em;
 }
 
+.top-nav nav .nav-name {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    padding-left: 1em;
+}
+
 .top-nav nav .nav-name p {
+    position: relative;
+    top: 5px;
     font-family: var(--body-font);
     color: var(--color-blue);
     font-weight: bold;
@@ -51,9 +65,24 @@ body {
     font-weight: bold;
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 500px) {
     .top-nav nav .nav-items {
         display: none;
+    }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 1000px) {
+    .top-nav nav {
+        flex-direction: column-reverse;
+    }
+
+    .top-nav nav .nav-items {
+        justify-content: flex-start;
+        padding-left: 1em;
+    }
+
+    .top-nav nav .nav-name {
+        margin-top: 1em;
     }
 }
 
@@ -68,34 +97,50 @@ body {
     padding: 1em 3em;
 }
 
-.hero-text {
-    width: 800px;
-    height: 18em;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-.hero-header .hero-text h1 {
+.hero-text,
+.new-hero-text {
     font-family: var(--hero-font);
     font-size: 4em;
     color: var(--color-orange);
 }
 
+.new-hero-text .char {
+    visibility: hidden;
+    animation: animate 0s steps(2) forwards;
+    animation-delay: calc(0.1s * var(--char-index));
+}
+
+@keyframes animate {
+    0% {
+        visibility: hidden;
+    }
+
+    100% {
+        visibility: visible;
+    }
+}
+
 @media only screen and (max-width: 450px) {
     .hero-header {
         background-position-x: 30em;
+        padding: 0;
     }
 
-    .hero-text {
+    .hero-header div {
+        padding: 1em;
+    }
+
+    .new-hero-text {
         width: 100%;
         justify-content: flex-end;
+        font-size: 3em;
     }
 
     .hero-header .hero-text h1 {
         font-size: 2.5em;
     }
 }
+
 
 
 .about-me {
@@ -131,24 +176,58 @@ body {
 
 .about-me .about-right p {
     font-family: var(--body-font);
+    color: black;
     font-size: 1.5em;
     font-weight: 400;
     width: 60%;
 }
 
-.about-me .about-right p span {
-    color: var(--color-orange);
+@keyframes appear {
+    0% {
+        visibility:hidden;
+    }
+
+    100% {
+        visibility: visible;
+    }
 }
 
-@media only screen and (max-width: 450px) {
+.h2-split {
+    visibility: hidden;
+}
+
+.h2-split.appear.words .char {
+    animation: appear 0.3s both;
+    animation-delay: calc(20ms * var(--char-index));
+}
+
+
+@media only screen and (max-width: 500px) {
+    .about-me {
+        padding: 1em 1em;
+    }
+
     .about-me .about-left h2 {
         width: 100%;
-        margin-bottom: 0px;
+        margin-bottom: 1em;
+        font-size: 2em;
     }
 
     .about-me .about-right p {
         width: 100%;
         text-align: left;
+    }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 1000px) {
+    .about-me .about-left h2 {
+        width: 80%;
+        margin-bottom: 1em;
+        font-size: 2em;
+    }
+
+    .about-me .about-right p {
+        width: 80%;
     }
 }
 
@@ -169,7 +248,7 @@ body {
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 1em;
     grid-row-gap: 3em;
-    grid-row-gap: 1em;
+    grid-row-gap: 3em;
     padding-bottom: 2em;
 }
 
@@ -207,18 +286,41 @@ body {
 }
 
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 500px) {
     .my-skills {
-        padding: 2em 1em;
+        padding: 1em;
     }
 
     .my-skills .skill-grid {
         grid-template-columns: 1fr;
     }
 
-    .my-skills .skill-div .skill {
-        width: 80%;
+    .my-skills .skill-grid .skill {
+        width: 90%;
+        padding: 1em;
         margin-bottom: 1em;
+    }
+
+    .my-skills .skill-grid .skill .skill-top {
+        margin-bottom: 1em;
+    }
+
+    .my-skills .skill-grid .skill .skill-top img {
+        width: 40px;
+    }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 1000px) {
+    .my-skills .skill-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .my-skills .skill-grid .skill {
+        width: 80%;
+    }
+
+    .my-skills .skill-grid .skill .skill-top img {
+        width: 50px;
     }
 }
 
@@ -281,10 +383,39 @@ body {
     color: white;
 }
 
-@media only screen and (max-width: 450px) {
-    .interests p {
-        width: 100%;
+@media only screen and (max-width: 500px) {
+    .interests {
+        padding: 1em;
     }
+
+    .interests h2 {
+        margin: 0.5em 0;
+    }
+
+    .interests .interests-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .interests .interests-grid .interest {
+        width: 100%;
+        margin-bottom: 1em;
+    }
+
+    .interests .interests-grid .interest h4 {
+        margin: 0.5em 0;
+    }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 1000px) {
+    .interests {
+        padding: 1em;
+    }
+
+    .interests .interests-grid {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 1em;
+    }
+
 }
 
 
@@ -306,9 +437,23 @@ body {
     font-weight: bold;
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 500px) {
+    .contact {
+        padding: 1em 1em 4em 1em;
+    }
+
     .contact h2 {
         width: 100%;
+    }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 1000px) {
+    .contact {
+        padding: 1em 1em 4em 1em;
+    }
+
+    .contact h2 {
+        font-size: 2em;
     }
 }
 
