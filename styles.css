@@ -257,11 +257,14 @@ body {
 
 .my-skills .skill-grid .skill {
     background-color: var(--color-blue);
-    padding: 2em;
+    padding: 1em;
     width: 400px;
 }
 
-
+.my-skills .skill-grid .skill .inner {
+    padding: 2em;
+    border: 1px solid white;
+}
 
 .my-skills .skill-grid .skill .skill-top {
     display: flex;
@@ -280,6 +283,8 @@ body {
     filter: invert(100%);
     width: 60px;
     margin-right: 1em;
+    position: relative;
+    bottom: 1em;
 }
 
 .my-skills .skill-grid .skill p {
